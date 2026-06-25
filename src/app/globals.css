@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fbf3e4;
+  --foreground: #2f1c12;
+  --font-sans: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+@theme {
+  --color-ivory: #fbf3e4;
+  --color-cream: #fff9ee;
+  --color-sand: #ead7b7;
+  --color-teak: #b36a32;
+  --color-copper: #c27a3b;
+  --color-walnut: #2f1c12;
+  --color-bark: #5a321e;
+  --color-forest: #2f6f4e;
+  --color-sage: #dcead5;
+  --color-ink: #1d1510;
+  --font-sans: var(--font-sans);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: #2f6f4e;
+  color: #fff9ee;
+}
+
+.container-page {
+  width: min(1120px, calc(100% - 32px));
+  margin-inline: auto;
+}
+
+.wood-grain {
+  background-image:
+    linear-gradient(115deg, rgba(255, 255, 255, 0.2), rgba(47, 28, 18, 0.08)),
+    repeating-linear-gradient(
+      93deg,
+      rgba(255, 255, 255, 0.12) 0,
+      rgba(255, 255, 255, 0.12) 2px,
+      transparent 2px,
+      transparent 13px
+    ),
+    linear-gradient(135deg, #8c4d24 0%, #c78342 48%, #5a321e 100%);
+}
+
+.wood-lines {
+  background-image:
+    radial-gradient(circle at 18% 30%, rgba(255, 255, 255, 0.28), transparent 18%),
+    repeating-linear-gradient(
+      101deg,
+      rgba(47, 28, 18, 0.18) 0,
+      rgba(47, 28, 18, 0.18) 1px,
+      transparent 1px,
+      transparent 18px
+    );
+}
+
+.soft-grid {
+  background-image:
+    linear-gradient(rgba(90, 50, 30, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(90, 50, 30, 0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.shadow-premium {
+  box-shadow: 0 24px 70px rgba(47, 28, 18, 0.13);
+}
+
+.focus-ring {
+  outline: none;
+}
+
+.focus-ring:focus-visible {
+  box-shadow: 0 0 0 3px rgba(47, 111, 78, 0.28);
+}
