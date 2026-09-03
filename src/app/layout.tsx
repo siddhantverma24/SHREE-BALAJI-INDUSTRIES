@@ -1,9 +1,36 @@
 import type { Metadata } from "next";
+import { DM_Sans, Space_Grotesk } from "next/font/google";
+import Script from "next/script";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { WhatsAppFloatingButton } from "@/components/whatsapp-floating-button";
 import { siteInfo } from "@/lib/site";
 import "./globals.css";
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-body",
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-heading",
+});
+
+const themeInitScript = `
+  (function () {
+    try {
+      var key = "shree-balaji-theme";
+      var stored = window.localStorage.getItem(key);
+      var theme = stored === "dark" || stored === "light" ? stored : "light";
+      var root = document.documentElement;
+      root.classList.toggle("dark", theme === "dark");
+      root.dataset.theme = theme;
+    } catch (error) {}
+  })();
+`;
 
 export const metadata: Metadata = {
   title: {
@@ -18,7 +45,7 @@ export const metadata: Metadata = {
     "flush doors",
     "waterproof plywood",
     "wooden boards",
-    "Aaranya Boards",
+    "Shree Balaji Industries",
   ],
   openGraph: {
     title: `${siteInfo.name} | Premium Wooden Boards`,
@@ -35,8 +62,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full scroll-smooth">
+    <html
+      lang="en"
+      className={`${dmSans.variable} ${spaceGrotesk.variable} h-full scroll-smooth`}
+      suppressHydrationWarning
+    >
       <body className="min-h-full bg-ivory text-walnut antialiased">
+        <Script
+          id="theme-init"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: themeInitScript }}
+        />
         <SiteHeader />
         <main className="min-h-screen">{children}</main>
         <SiteFooter />

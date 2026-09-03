@@ -7,14 +7,15 @@ import { products } from "@/lib/products";
 export const metadata: Metadata = {
   title: "Products",
   description:
-    "Explore plywood, block boards, flush doors and panel products from Aaranya Boards.",
+    "Explore plywood, block boards, flush doors and panel products from Shree Balaji Industries.",
 };
 
 export default function ProductsPage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-cream py-16 md:py-24">
+      <section className="relative overflow-hidden border-b border-bark/10 bg-cream py-16 md:py-24">
         <div className="soft-grid absolute inset-0 opacity-50" />
+        <div className="wood-grain absolute -right-20 top-10 h-72 w-72 rotate-6 rounded-lg opacity-20 blur-sm" />
         <div className="container-page relative">
           <Reveal>
             <SectionHeading

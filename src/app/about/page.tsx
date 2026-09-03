@@ -8,7 +8,7 @@ import { aboutHighlights, siteInfo } from "@/lib/site";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Learn about Aaranya Boards, a practical and premium wooden boards company for Indian interiors.",
+    "Learn about Shree Balaji Industries, a practical and premium wooden boards company for Indian interiors.",
 };
 
 export default function AboutPage() {
@@ -19,14 +19,14 @@ export default function AboutPage() {
         <div className="container-page relative grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-center">
           <Reveal>
             <SectionHeading
-              eyebrow="About Aaranya Boards"
+              eyebrow="About Shree Balaji Industries"
               title="Warm wood character with practical Indian reliability."
-              description="Aaranya Boards is a placeholder brand for a manufacturer and supplier of plywood, block boards, flush doors and panel products for homes, offices and trade projects."
+              description="Shree Balaji Industries is a placeholder brand for a manufacturer and supplier of plywood, block boards, flush doors and panel products for homes, offices and trade projects."
             />
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/products"
-                className="focus-ring inline-flex items-center justify-center gap-2 rounded-md bg-walnut px-5 py-3 text-sm font-black text-cream transition hover:bg-forest"
+                className="focus-ring inline-flex items-center justify-center gap-2 rounded-md bg-action px-5 py-3 text-sm font-black text-action-text transition hover:bg-forest hover:text-cream"
               >
                 Explore products
                 <ArrowRight className="size-4" aria-hidden="true" />
@@ -42,7 +42,7 @@ export default function AboutPage() {
             </div>
           </Reveal>
           <Reveal delay={0.08}>
-            <div className="relative overflow-hidden rounded-lg border border-bark/10 bg-walnut p-6 text-cream shadow-premium">
+            <div className="relative overflow-hidden rounded-lg border border-bark/10 bg-panel p-6 text-panel-text shadow-premium">
               <div className="wood-grain absolute inset-x-10 top-8 h-52 rounded-md opacity-85" />
               <div className="wood-lines absolute inset-0 opacity-45" />
               <div className="relative mt-48 rounded-lg bg-cream/95 p-6 text-walnut">

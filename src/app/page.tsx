@@ -12,16 +12,23 @@ import Link from "next/link";
 import { ProductCard } from "@/components/product-card";
 import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
+import {
+  PhotoShowcaseCard,
+  ShowcasePreviewLink,
+  VideoShowcaseCard,
+} from "@/components/showcase-card";
 import { applications } from "@/lib/applications";
 import { featuredProducts, productCategories } from "@/lib/products";
+import { photoShowcaseItems, videoShowcaseItems } from "@/lib/showcase";
 import { siteInfo, whyChooseUs } from "@/lib/site";
 
 export default function Home() {
   return (
     <>
-      <section className="relative isolate overflow-hidden border-b border-bark/10 bg-cream">
-        <div className="soft-grid absolute inset-0 opacity-55" />
-        <div className="wood-grain absolute -right-28 top-10 h-72 w-72 rotate-6 rounded-lg opacity-25 blur-sm md:h-[520px] md:w-[520px]" />
+      <section className="relative isolate overflow-hidden border-b border-panel/20 bg-panel text-panel-text">
+        <div className="soft-grid absolute inset-0 opacity-15" />
+        <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-ivory via-ivory/25 to-transparent" />
+        <div className="wood-grain absolute -right-28 top-10 h-72 w-72 rotate-6 rounded-lg opacity-30 blur-sm md:h-[520px] md:w-[520px]" />
         <div className="absolute inset-y-0 right-0 hidden w-1/2 overflow-hidden lg:block">
           <div className="wood-grain absolute right-24 top-16 h-[540px] w-40 rotate-6 rounded-md shadow-premium" />
           <div className="wood-grain absolute right-52 top-28 h-[520px] w-32 -rotate-3 rounded-md shadow-premium brightness-110" />
@@ -31,20 +38,20 @@ export default function Home() {
         <div className="container-page relative z-10 py-16 md:py-24 lg:py-28">
           <div className="max-w-3xl">
             <Reveal>
-              <p className="mb-5 inline-flex rounded-md border border-forest/20 bg-sage px-4 py-2 text-xs font-black uppercase tracking-[0.2em] text-forest">
+              <p className="mb-5 inline-flex rounded-md border border-gold/40 bg-gold px-4 py-2 text-xs font-black uppercase text-panel">
                 Premium Indian panel solutions
               </p>
-              <h1 className="text-4xl font-black leading-[1.04] text-walnut md:text-6xl lg:text-7xl">
+              <h1 className="font-display text-5xl font-black text-panel-text md:text-7xl lg:text-8xl">
                 Premium Wooden Boards for Stronger Indian Homes & Interiors
               </h1>
-              <p className="mt-6 max-w-2xl text-lg leading-8 text-bark/82 md:text-xl">
+              <p className="mt-6 max-w-2xl text-lg leading-8 text-panel-text/76 md:text-xl">
                 Plywood, Block Boards, Flush Doors and panel solutions crafted
                 for durability, finish and everyday Indian usage.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link
                   href="/products"
-                  className="focus-ring inline-flex items-center justify-center gap-2 rounded-md bg-walnut px-6 py-4 text-sm font-black text-cream shadow-premium transition hover:bg-forest"
+                  className="focus-ring inline-flex items-center justify-center gap-2 rounded-md bg-ember px-6 py-4 text-sm font-black text-cream shadow-premium transition hover:bg-gold hover:text-panel"
                 >
                   Explore Products
                   <ArrowRight className="size-4" aria-hidden="true" />
@@ -53,7 +60,7 @@ export default function Home() {
                   href={siteInfo.whatsapp}
                   target="_blank"
                   rel="noreferrer"
-                  className="focus-ring inline-flex items-center justify-center gap-2 rounded-md border border-bark/15 bg-cream/75 px-6 py-4 text-sm font-black text-walnut backdrop-blur transition hover:border-forest hover:text-forest"
+                  className="focus-ring inline-flex items-center justify-center gap-2 rounded-md border border-panel-text/20 bg-panel-text/10 px-6 py-4 text-sm font-black text-panel-text backdrop-blur transition hover:border-gold hover:text-gold"
                 >
                   <MessageCircle className="size-4" aria-hidden="true" />
                   Get Quote on WhatsApp
@@ -70,10 +77,10 @@ export default function Home() {
             ].map(([value, label]) => (
               <div
                 key={label}
-                className="rounded-lg border border-bark/10 bg-cream/80 p-4 backdrop-blur"
+                className="rounded-lg border border-panel-text/10 bg-panel-text/10 p-4 shadow-sm backdrop-blur"
               >
-                <p className="text-3xl font-black text-walnut">{value}</p>
-                <p className="mt-1 text-sm font-bold text-bark/68">{label}</p>
+                <p className="font-display text-3xl font-black text-gold">{value}</p>
+                <p className="mt-1 text-sm font-bold text-panel-text/68">{label}</p>
               </div>
             ))}
           </Reveal>
@@ -141,7 +148,7 @@ export default function Home() {
           <div className="grid gap-4 sm:grid-cols-2">
             {whyChooseUs.map((point, index) => (
               <Reveal key={point.title} delay={index * 0.05}>
-                <div className="h-full rounded-lg border border-bark/10 bg-ivory p-5">
+              <div className="h-full rounded-lg border border-bark/10 bg-white p-5 shadow-sm">
                   <point.icon className="size-6 text-forest" aria-hidden="true" />
                   <h3 className="mt-5 text-lg font-black text-walnut">
                     {point.title}
@@ -240,7 +247,7 @@ export default function Home() {
               },
             ].map((item, index) => (
               <Reveal key={item.title} delay={index * 0.06}>
-                <article className="h-full rounded-lg border border-bark/10 bg-cream p-6">
+                <article className="h-full rounded-lg border border-bark/10 bg-white p-6 shadow-sm">
                   <item.icon className="size-6 text-forest" aria-hidden="true" />
                   <h3 className="mt-5 text-xl font-black text-walnut">
                     {item.title}
@@ -253,7 +260,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-walnut py-16 text-cream md:py-20">
+      <section className="relative overflow-hidden bg-panel py-16 text-panel-text md:py-20">
+        <div className="wood-grain absolute -right-24 top-8 h-72 w-72 rotate-12 rounded-lg opacity-10 blur-sm" />
         <div className="container-page grid gap-8 md:grid-cols-[1fr_auto] md:items-center">
           <Reveal>
             <p className="text-sm font-black uppercase tracking-[0.18em] text-sage">
@@ -262,7 +270,7 @@ export default function Home() {
             <h2 className="mt-4 max-w-3xl text-3xl font-black leading-tight md:text-5xl">
               Need boards for a project, site or regular trade supply?
             </h2>
-            <p className="mt-4 max-w-2xl text-base leading-7 text-cream/72">
+            <p className="mt-4 max-w-2xl text-base leading-7 text-panel-text/72">
               Share the use case, quantity and city. The team can guide you on
               suitable plywood, block board and flush door options.
             </p>
@@ -272,7 +280,7 @@ export default function Home() {
               href={siteInfo.whatsapp}
               target="_blank"
               rel="noreferrer"
-              className="focus-ring inline-flex items-center justify-center gap-2 rounded-md bg-forest px-6 py-4 text-sm font-black text-cream transition hover:bg-copper"
+              className="focus-ring inline-flex items-center justify-center gap-2 rounded-md bg-ember px-6 py-4 text-sm font-black text-cream transition hover:bg-gold hover:text-panel"
             >
               <MessageCircle className="size-4" aria-hidden="true" />
               Start WhatsApp Enquiry
@@ -313,7 +321,7 @@ export default function Home() {
               },
             ].map((testimonial, index) => (
               <Reveal key={testimonial.name} delay={index * 0.06}>
-                <figure className="h-full rounded-lg border border-bark/10 bg-cream p-6">
+                <figure className="h-full rounded-lg border border-bark/10 bg-white p-6 shadow-sm">
                   <blockquote className="text-base leading-7 text-bark/82">
                     {testimonial.quote}
                   </blockquote>
@@ -322,6 +330,41 @@ export default function Home() {
                     <p className="mt-1 text-sm text-bark/65">{testimonial.role}</p>
                   </figcaption>
                 </figure>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-cream py-14 md:py-20">
+        <div className="container-page">
+          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+            <Reveal>
+              <SectionHeading
+                eyebrow="Work showcase"
+                title="A preview of projects, process clips and finished interiors."
+                description="Explore product photos, factory moments, short demos and real application categories for Indian homes and commercial spaces."
+              />
+            </Reveal>
+            <Reveal delay={0.08}>
+              <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
+                <ShowcasePreviewLink />
+              </div>
+            </Reveal>
+          </div>
+
+          <div className="mt-8 grid gap-5 lg:grid-cols-[1fr_1fr_1fr]">
+            {photoShowcaseItems.slice(0, 3).map((item, index) => (
+              <Reveal key={item.id} delay={index * 0.05}>
+                <PhotoShowcaseCard item={item} compact />
+              </Reveal>
+            ))}
+          </div>
+
+          <div className="mt-5 grid gap-5 md:grid-cols-2">
+            {videoShowcaseItems.slice(0, 2).map((item, index) => (
+              <Reveal key={item.id} delay={index * 0.05}>
+                <VideoShowcaseCard item={item} compact />
               </Reveal>
             ))}
           </div>

@@ -97,7 +97,7 @@ export default function QualityPage() {
         </div>
       </section>
 
-      <section className="bg-walnut py-16 text-cream md:py-20">
+      <section className="bg-panel py-16 text-panel-text md:py-20">
         <div className="container-page grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
           <Reveal>
             <SectionHeading
@@ -116,10 +116,10 @@ export default function QualityPage() {
               ].map((item) => (
                 <div
                   key={item}
-                  className="flex gap-3 rounded-lg border border-cream/10 bg-cream/8 p-4"
+                  className="flex gap-3 rounded-lg border border-panel-text/10 bg-panel-text/8 p-4"
                 >
                   <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-sage" aria-hidden="true" />
-                  <p className="text-sm font-bold text-cream/78">{item}</p>
+                  <p className="text-sm font-bold text-panel-text/78">{item}</p>
                 </div>
               ))}
             </div>

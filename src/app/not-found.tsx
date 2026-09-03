@@ -16,7 +16,7 @@ export default function NotFound() {
         </p>
         <Link
           href="/products"
-          className="focus-ring mt-7 inline-flex rounded-md bg-walnut px-5 py-3 text-sm font-black text-cream transition hover:bg-forest"
+          className="focus-ring mt-7 inline-flex rounded-md bg-action px-5 py-3 text-sm font-black text-action-text transition hover:bg-forest hover:text-cream"
         >
           View products
         </Link>

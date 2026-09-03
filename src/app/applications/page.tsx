@@ -56,7 +56,7 @@ export default function ApplicationsPage() {
                 </div>
                 <Link
                   href="/products"
-                  className="focus-ring mt-7 inline-flex items-center gap-2 rounded-md bg-walnut px-4 py-3 text-sm font-black text-cream transition hover:bg-forest"
+                  className="focus-ring mt-7 inline-flex items-center gap-2 rounded-md bg-action px-4 py-3 text-sm font-black text-action-text transition hover:bg-forest hover:text-cream"
                 >
                   View matching products
                   <ArrowRight className="size-4" aria-hidden="true" />
@@ -64,6 +64,34 @@ export default function ApplicationsPage() {
               </article>
             </Reveal>
           ))}
+        </div>
+      </section>
+
+      <section className="bg-cream py-16 md:py-20">
+        <div className="container-page">
+          <Reveal>
+            <div className="rounded-lg border border-bark/10 bg-ivory p-6 shadow-premium md:grid md:grid-cols-[1fr_auto] md:items-center md:gap-8 md:p-10">
+              <div>
+                <p className="text-sm font-black uppercase tracking-[0.18em] text-forest">
+                  See real applications
+                </p>
+                <h2 className="mt-3 text-3xl font-black leading-tight text-walnut md:text-4xl">
+                  View photos and demos from boards used in real spaces.
+                </h2>
+                <p className="mt-3 max-w-2xl text-sm leading-6 text-bark/72">
+                  Explore kitchens, wardrobes, doors, office interiors, wall
+                  panels and process videos in the new showcase.
+                </p>
+              </div>
+              <Link
+                href="/showcase"
+                className="focus-ring mt-6 inline-flex items-center justify-center gap-2 rounded-md bg-action px-5 py-3 text-sm font-black text-action-text shadow-premium transition hover:bg-forest hover:text-cream md:mt-0"
+              >
+                Open Showcase
+                <ArrowRight className="size-4" aria-hidden="true" />
+              </Link>
+            </div>
+          </Reveal>
         </div>
       </section>
     </>

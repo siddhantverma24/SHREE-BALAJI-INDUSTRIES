@@ -1,4 +1,4 @@
-# Aaranya Boards Website
+# Shree Balaji Industries Website
 
 Production-ready Next.js website for an Indian wooden boards company selling Plywood, Block Boards, Flush Doors and related panel products.
 

@@ -83,7 +83,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
                 href={siteInfo.whatsapp}
                 target="_blank"
                 rel="noreferrer"
-                className="focus-ring inline-flex items-center justify-center gap-2 rounded-md bg-forest px-6 py-4 text-sm font-black text-cream shadow-premium transition hover:bg-walnut"
+                className="focus-ring inline-flex items-center justify-center gap-2 rounded-md bg-forest px-6 py-4 text-sm font-black text-cream shadow-premium transition hover:bg-action hover:text-action-text"
               >
                 <MessageCircle className="size-4" aria-hidden="true" />
                 Ask on WhatsApp
@@ -99,7 +99,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
           </Reveal>
 
           <Reveal delay={0.08}>
-            <div className="relative min-h-80 overflow-hidden rounded-lg border border-bark/10 bg-walnut p-6 shadow-premium">
+            <div className="relative min-h-80 overflow-hidden rounded-lg border border-bark/10 bg-panel p-6 shadow-premium">
               <div className="wood-grain absolute inset-x-8 bottom-8 top-8 rounded-md" />
               <div className="wood-lines absolute inset-0 opacity-55" />
               <div className="absolute left-8 top-8 rounded-md bg-cream/92 px-4 py-2 text-sm font-black text-walnut">
@@ -188,11 +188,11 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
             </Reveal>
 
             <Reveal delay={0.12}>
-              <div className="rounded-lg border border-bark/10 bg-walnut p-6 text-cream">
+              <div className="rounded-lg border border-bark/10 bg-panel p-6 text-panel-text">
                 <h2 className="text-2xl font-black">Why choose this product</h2>
                 <ul className="mt-5 grid gap-3">
                   {product.whyChoose.map((reason) => (
-                    <li key={reason} className="flex gap-3 text-sm leading-6 text-cream/76">
+                    <li key={reason} className="flex gap-3 text-sm leading-6 text-panel-text/76">
                       <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-sage" aria-hidden="true" />
                       {reason}
                     </li>

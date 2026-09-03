@@ -15,20 +15,25 @@ import {
 } from "lucide-react";
 
 export const siteInfo = {
-  name: "Aaranya Boards",
+  name: "Shree Balaji Industries",
   tagline: "Premium wooden boards for stronger Indian interiors.",
-  phone: "+91 98765 43210",
-  phoneHref: "tel:+919876543210",
-  email: "sales@aaranyaboards.in",
-  address: "Industrial Area, Rajkot, Gujarat 360001",
+  contactPerson: "Ronit Jain",
+  phone: "+91 70656 17116",
+  phoneHref: "tel:+917065617116",
+  email: "sales@shreebalajiindustries.in",
+  address: "28\u00b046'12.3\"N 76\u00b048'39.1\"E",
+  coordinates: "28\u00b046'12.3\"N 76\u00b048'39.1\"E",
+  googleMapsUrl:
+    "https://www.google.com/maps/place/28%C2%B046'12.3%22N+76%C2%B048'39.1%22E/@28.7636639,76.8106734,14.55z/data=!4m4!3m3!8m2!3d28.770071!4d76.8108597?hl=en&entry=ttu&g_ep=EgoyMDI2MDYyMy4wIKXMDSoASAFQAw%3D%3D",
   whatsapp:
-    "https://wa.me/919876543210?text=Hi%2C%20I%20want%20to%20enquire%20about%20your%20wooden%20boards",
+    "https://wa.me/917065617116?text=Hi%2C%20I%20want%20to%20enquire%20about%20your%20wooden%20boards",
 };
 
 export const navItems = [
   { label: "Home", href: "/" },
   { label: "Products", href: "/products" },
   { label: "Applications", href: "/applications" },
+  { label: "Showcase", href: "/showcase" },
   { label: "About", href: "/about" },
   { label: "Quality", href: "/quality" },
   { label: "Contact", href: "/contact" },
@@ -75,7 +80,13 @@ export const whyChooseUs: IconPoint[] = [
 
 export const contactCards = [
   {
-    title: "Call us",
+    title: "Contact person",
+    value: siteInfo.contactPerson,
+    href: siteInfo.whatsapp,
+    icon: Handshake,
+  },
+  {
+    title: "Call Ronit Jain",
     value: siteInfo.phone,
     href: siteInfo.phoneHref,
     icon: Phone,
@@ -93,9 +104,9 @@ export const contactCards = [
     icon: Clock,
   },
   {
-    title: "Visit",
-    value: siteInfo.address,
-    href: "/contact",
+    title: "Location",
+    value: siteInfo.coordinates,
+    href: siteInfo.googleMapsUrl,
     icon: MapPin,
   },
 ];
